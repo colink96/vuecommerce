@@ -1,19 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
-import {Router} from 'react-router-dom'
-import history from './history'
-import store from './store'
-import App from './app'
-
-// establishes socket connection
 import './socket'
+import Vue from 'vue'
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById('app')
-)
+Vue.component('app-head', {props: ['text'], template: '<h1>{{text}}</h1>'})
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    header: 'Welcome to VueCommerce!'
+  }
+})
