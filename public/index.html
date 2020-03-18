@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
-    <title>Bot Buddies</title>
+    <title>VueCommerce!</title>
     <link
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
@@ -24,6 +24,10 @@
   <body>
     <div id="app">
       <app-head v-bind:text="header"></app-head>
+      <all-products
+        v-bind:products="products"
+        v-bind:fetched="fetched"
+      ></all-products>
     </div>
   </body>
 </html>
